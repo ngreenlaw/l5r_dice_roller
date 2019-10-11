@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>L5R Dice Roller</title>
+    <link rel="stylesheet" href="style.css">
+</head>  
+<body>
+  <div>
+    <p><img src="https://images-cdn.fantasyflightgames.com/filer_public/c8/e9/c8e9f2fc-6675-4411-a867-73b23d7b4216/l5c_logo_transparent.png", alt="L5R Logo", id="l5r_logo"> </p>
+  </div>
+  <div>
+    <p><input id='bd_num' type="number" min=1 max=5 step=1 value=3> Number of Black Dice to Roll</input>
+    </p>
+    <p><input id='wd_num' type="number" min=1 max=5 step=1 value=3> Number of White Dice to Roll</input>
+    </p>
+  </div>
+  <div>
+    <p><button id="bd_roll", class="roll_button">Roll Black Dice</button> 
+    <button id="wd_roll", class="roll_button">Roll White Dice</button> </p>
+    <p><button id="ad_roll">Roll Both Dice</button></p>
+  </div>
+  <div id='tables'>
+    <p id="bd_display">
+        <table id = "bd_table" class='center'></table> 
+        <p></p>
+        <table id = "wd_table" class='center'></table>
+      </p>
+  </div>
+  <script src="dice.js"></script>
+  
+</body>
+</html>
