@@ -8,7 +8,7 @@ function roll_dice(dice_num, dice_options) {
     return results;
   }
 
-function fillTable(result, tab, head){
+function fillTable(result, tab, head, dice_options){
   var table = document.getElementById(tab);
   table.cellPadding = '10';
   for(var i = 0;i<table.rows.length;){
@@ -28,7 +28,7 @@ function fillTable(result, tab, head){
     var exp_roll = result[i];
     var count = 1;
     while (String(exp_roll).includes('Success_Exp')){
-      var exp_roll = roll_dice(1);
+      var exp_roll = roll_dice(1, dice_options);
       var cell2 = row.insertCell(count);
       cell2.innerHTML = '<img src='+exp_roll +' alt="" width="50%" height = "50%"/>';//exp_roll;
       //cell2.bgColor = 'white'; 
@@ -44,7 +44,7 @@ button.onclick = function() {
   var dice_options = ['Opp.png', 'Strife.png', 'Success_Exp.png', 'Success.png']
   //['success', 'opportunity', 'blank', 'explosive success/strife', 'opportunity/strife', 'success/strife'];
   var result = roll_dice(dice_num, dice_options);
-  fillTable(result, 'bd_table', "<b>Black Dice Results</b>");
+  fillTable(result, 'bd_table', "<b>Black Dice Results</b>", dice_options);
 };
 var wbutton = document.getElementById('wd_roll');
 
@@ -53,7 +53,7 @@ wbutton.onclick = function() {
   var dice_options = ['Opp.png', 'Strife.png', 'Success_Exp.png', 'Success.png']
   //['success', 'opportunity', 'blank', 'explosive success/strife', 'opportunity/strife', 'success/strife'];
   var result = roll_dice(dice_num, dice_options);
-  fillTable(result, 'wd_table', "<b>White Dice Results</b>");
+  fillTable(result, 'wd_table', "<b>White Dice Results</b>", dice_options);
 };
 
 var abutton = document.getElementById('ad_roll');
@@ -63,11 +63,11 @@ abutton.onclick = function() {
   var dice_options = ['Opp.png', 'Strife.png', 'Success_Exp.png', 'Success.png']
   //['success', 'opportunity', 'blank', 'explosive success/strife', 'opportunity/strife', 'success/strife'];
   var result = roll_dice(dice_num, dice_options);
-  fillTable(result, 'bd_table', "<b>Black Dice Results</b>");
+  fillTable(result, 'bd_table', "<b>Black Dice Results</b>", dice_options);
   
   var dice_num = document.getElementById('wd_num').value;
   var dice_options = ['Opp.png', 'Strife.png', 'Success_Exp.png', 'Success.png']
   //['success', 'opportunity', 'blank', 'explosive success/strife', 'opportunity/strife', 'success/strife'];
   var result = roll_dice(dice_num, dice_options);
-  fillTable(result, 'wd_table', "<b>White Dice Results</b>");
+  fillTable(result, 'wd_table', "<b>White Dice Results</b>", dice_options);
 };
