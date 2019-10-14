@@ -37,6 +37,14 @@ function fillTable(result, tab, head, dice_options){
   }
 }
 
+function button_click(dice_input_id, dice_options, table_id, header){
+  var dice_num = document.getElementById(dice_input_id).value;
+  var dice_options = ['Opp.png', 'Strife.png', 'Success_Exp.png', 'Success.png']
+  //['success', 'opportunity', 'blank', 'explosive success/strife', 'opportunity/strife', 'success/strife'];
+  var result = roll_dice(dice_num, dice_options);
+  fillTable(result, table_id, header, dice_options);
+}
+
 var button = document.getElementById('bd_roll');
 
 button.onclick = function() {
