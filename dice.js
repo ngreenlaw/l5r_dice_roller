@@ -11,18 +11,14 @@ function roll_dice(dice_num, dice_options) {
 function fillTable(result, tab, head, dice_options, column){
   var table = document.getElementById(tab);
   table.cellPadding = '10';
-  //Clear table
-  for(var i = 0;i<table.rows.length;){
-    table.deleteRow(i);
-  }
   //Create Header row
   var header = table.createTHead();
   var row = header.insertRow(0); 
   //Fill necessary Cells
-  for (var i=0; i<column; i++){
-    row.insertCell(i);
-    row.insertCell(-1*i);
-  }
+  //for (var i=0; i<1; i++){
+    row.insertCell(0);
+    //row.insertCell(-1*i);
+  //}
   var cell = row.insertCell(column);
   cell.innerHTML =  head;
   
@@ -30,15 +26,15 @@ function fillTable(result, tab, head, dice_options, column){
   {
     val = parseInt(key);
     let row = table.insertRow(val+1);
-    for (var i=0; i<column; i++){
-      row.insertCell(i);
-      row.insertCell(-1*i);
-    }
+    //for (var i=0; i<2; i++){
+      row.insertCell(0);
+      //row.insertCell(-1*i);
+    //}
     var cell1 = row.insertCell(column);
     cell1.innerHTML = '<img src='+result[val] +' alt="" width="50%" height = "50%"/>';//result[i];
     //cell1.bgColor = 'white'; 
     var exp_roll = result[val];
-    var count = val;
+    var count = val*column;
     while (String(exp_roll).includes('Success_Exp')){
       var exp_roll = roll_dice(1, dice_options);
       var cell2 = row.insertCell(count);
@@ -61,14 +57,32 @@ var abutton = document.getElementById('ad_roll');
 //['success', 'opportunity', 'blank', 'explosive success/strife', 'opportunity/strife', 'success/strife'];
 
 bbutton.onclick = function(){
-  button_click('bd_num', ['Opp.png', 'Strife.png', 'Success_Exp.png', 'Success.png'],'bd_table', "<b>Black Dice Results</b>", 0);
+  var table = document.getElementById('bd_table');
+  table.cellPadding = '10';
+  //Clear table
+  for(var i = 0;i<table.rows.length;){
+    table.deleteRow(i);
+  }
+  button_click('bd_num', ['Opp.png', 'Strife.png', 'Success_Exp.png', 'Success.png'],'bd_table', "<b>Black Dice Results</b>", -1);
 };
 
 wbutton.onclick = function(){
-  button_click('wd_num', ['Opp.png', 'Strife.png', 'Success_Exp.png', 'Success.png'],'wd_table', "<b>White Dice Results</b>", 2);
+  var table = document.getElementById('wd_table');
+  table.cellPadding = '10';
+  //Clear table
+  for(var i = 0;i<table.rows.length;){
+    table.deleteRow(i);
+  }
+  button_click('wd_num', ['Opp.png', 'Strife.png', 'Success_Exp.png', 'Success.png'],'wd_table', "<b>White Dice Results</b>", 1);
 };
 
 abutton.onclick = function() {
-  button_click('bd_num', ['Opp.png', 'Strife.png', 'Success_Exp.png', 'Success.png'],'bd_table', "<b>Black Dice Results</b>", 0);
-  button_click('wd_num', ['Opp.png', 'Strife.png', 'Success_Exp.png', 'Success.png'],'bd_table', "<b>White Dice Results</b>", 2);
+  var table = document.getElementById('bd_table');
+  table.cellPadding = '10';
+  //Clear table
+  for(var i = 0;i<table.rows.length;){
+    table.deleteRow(i);
+  }
+  button_click('bd_num', ['Opp.png', 'Strife.png', 'Success_Exp.png', 'Success.png'],'bd_table', "<b>Black Dice Results</b>", -1);
+  button_click('wd_num', ['Opp.png', 'Strife.png', 'Success_Exp.png', 'Success.png'],'bd_table', "<b>White Dice Results</b>", 1);
 };
