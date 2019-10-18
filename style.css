@@ -23,24 +23,24 @@ body {
 #tables{
   display:inline-block;   
 }
-th, thead{
+.dice_image{
+  box-shadow: 5px 5px 5px rgb(65, 65, 65);
+}
+
+.background_cell{
   border: 1px solid black;
   padding:15px;
   color:#fff;
-  text-shadow:1px 1px 1px rgb(95, 5, 5);
+  text-shadow:5px 5px 5px rgb(0, 0, 0);
   border:1px solid rgb(0, 0, 0);
   border-bottom:3px solid rgb(0, 0, 0);
   background-color:rgb(95, 5, 5);
-  background:-webkit-gradient(
-      linear,
-      left bottom,
-      left top,
+  background:-webkit-gradient(linear, left bottom, left top,
       color-stop(0.02, rgb(95, 5, 5)),
       color-stop(0.51, rgb(95, 5, 5)),
       color-stop(0.87, rgb(95, 5, 5))
       );
-  background: -moz-linear-gradient(
-      center bottom,
+  background: -moz-linear-gradient(center bottom,
       rgb(95, 5, 5) 2%,
       rgb(95, 5, 5) 51%,
       rgb(95, 5, 5) 87%
@@ -56,17 +56,7 @@ table.center {
   margin-left:auto; 
   margin-right:auto;
 }
-tbody td{
-  padding:10px;
-  text-align:center;
-  background-color:#DEF3CA;
-  border: 2px solid #E7EFE0;
-  -moz-border-radius:2px;
-  -webkit-border-radius:2px;
-  border-radius:2px;
-  color:#666;
-  text-shadow:1px 1px 1px #fff;
-}
+
 input{
   padding:5px;
   text-align:center;
