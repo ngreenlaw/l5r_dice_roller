@@ -24,6 +24,12 @@ function fillTable(result, tab, head, dice_num){
   table.cellPadding = '10';
   var column = 0;
   var row_count = table.rows.length;
+  var dice_class = '';
+  if(head == black_dice_head){
+    dice_class = 'black_dice_image';
+  }else{
+    dice_class = 'white_dice_image';
+  }
   if (row_count == 0){
         //Create Header row
         var header = table.createTHead();
@@ -55,7 +61,7 @@ function fillTable(result, tab, head, dice_num){
       cell.className = "background_cell";
       for (var ce = 0; ce < num_rolls; ce++){
         cell.innerHTML += '<img src='+result[val]['result'][ce] +
-          ' alt="" class="dice_image" display:block align=center style="border:5px solid black" height = "50%"/>';
+          ' alt="" class=' + dice_class + ' display:block align=center "/>';
         }
       }
 }
@@ -71,6 +77,8 @@ var wbutton = document.getElementById('wd_roll');
 var abutton = document.getElementById('ad_roll');
 var dice_options_black = ['Opp_black.png', 'Strife_black.png', 'Success_Exp_black.png', 'Success_black.png']
 var dice_options_white = ['Opp.png', 'Strife.png', 'Success_Exp.png', 'Success.png']
+var black_dice_head = "<b>~~Black Dice Results~~</b>";
+var white_dice_head = "<b>~~White Dice Results~~</b>";
 //['success', 'opportunity', 'blank', 'explosive success/strife', 'opportunity/strife', 'success/strife'];
 
 bbutton.onclick = function(){
@@ -80,7 +88,7 @@ bbutton.onclick = function(){
   for(var i = 0;i<table.rows.length;){
     table.deleteRow(i);
   }
-  button_click('bd_num', dice_options_black,'d_table', "<b>~~Black Dice Results~~</b>");
+  button_click('bd_num', dice_options_black,'d_table', black_dice_head);
 };
 
 wbutton.onclick = function(){
@@ -90,7 +98,7 @@ wbutton.onclick = function(){
   for(var i = 0;i<table.rows.length;){
     table.deleteRow(i);
   }
-  button_click('wd_num', dice_options_white, 'd_table', "<b>~~White Dice Results~~</b>");
+  button_click('wd_num', dice_options_white, 'd_table', white_dice_head);
 };
 
 abutton.onclick = function() {
@@ -100,6 +108,6 @@ abutton.onclick = function() {
   for(var i = 0;i<table.rows.length;){
     table.deleteRow(i);
   }
-  button_click('bd_num', dice_options_black,'d_table', "<b>~~Black Dice Results~~</b>");
-  button_click('wd_num', dice_options_white,'d_table', "<b>~~White Dice Results~~</b>");
+  button_click('bd_num', dice_options_black,'d_table', black_dice_head);
+  button_click('wd_num', dice_options_white,'d_table', white_dice_head);
 };
