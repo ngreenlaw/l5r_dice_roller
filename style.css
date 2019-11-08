@@ -4,32 +4,35 @@
 }
 
 html {
-  height: 200%;
-/* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f3e2c7+0,c19e67+23,b68d4c+83,e9d4b3+100 */
-background: #f3e2c7; /* Old browsers */
-background: -moz-linear-gradient(-45deg,  #f3e2c7 0%, #c19e67 23%, #b68d4c 83%, #e9d4b3 100%); /* FF3.6-15 */
-background: -webkit-linear-gradient(-45deg,  #f3e2c7 0%,#c19e67 23%,#b68d4c 83%,#e9d4b3 100%); /* Chrome10-25,Safari5.1-6 */
-background: linear-gradient(135deg,  #f3e2c7 0%,#c19e67 23%,#b68d4c 83%,#e9d4b3 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3e2c7', endColorstr='#e9d4b3',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
-
+  height: 100%;
+  max-height: 100%;
+  /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#f3e2c7+0,c19e67+23,b68d4c+83,e9d4b3+100 */
+  background: #f3e2c7; /* Old browsers */
+  background: -moz-linear-gradient(-45deg,  #f3e2c7 0%, #c19e67 23%, #b68d4c 83%, #e9d4b3 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(-45deg,  #f3e2c7 0%,#c19e67 23%,#b68d4c 83%,#e9d4b3 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(135deg,  #f3e2c7 0%,#c19e67 23%,#b68d4c 83%,#e9d4b3 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f3e2c7', endColorstr='#e9d4b3',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 body {
   text-align:center;
-  height: 100%;
   margin: 0;
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
-#tables{
-  display:inline-block;   
-}
-.dice_image{
+
+.black_dice_image{
   box-shadow: 5px 5px 5px rgb(65, 65, 65);
+  border:5px solid rgb(185, 185, 185);
+}
+
+.white_dice_image{
+  box-shadow: 5px 5px 5px rgb(65, 65, 65);
+  border:5px solid black;
 }
 
 .background_cell{
   border: 1px solid black;
-  padding:15px;
+  padding:5px;
   color:#fff;
   text-shadow:5px 5px 5px rgb(0, 0, 0);
   border:1px solid rgb(0, 0, 0);
@@ -52,6 +55,7 @@ body {
   border-top-left-radius:5px;
   border-top-right-radius:5px;
 }
+
 table.center {
   margin-left:auto; 
   margin-right:auto;
@@ -106,5 +110,5 @@ input{
   display: block;
   margin-left: auto;
   margin-right: auto;
-  width: 50%;
+  width: 25%;
 }
