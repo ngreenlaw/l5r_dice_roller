@@ -21,7 +21,6 @@ function roll_dice(dice_num, dice_options) {
 
 function fillTable(result, tab, head, dice_num){
   var table = document.getElementById(tab);
-  table.cellPadding = '10';
   var column = 0;
   var row_count = table.rows.length;
   var dice_class = '';
@@ -61,7 +60,7 @@ function fillTable(result, tab, head, dice_num){
       cell.className = "background_cell";
       for (var ce = 0; ce < num_rolls; ce++){
         cell.innerHTML += '<img src='+result[val]['result'][ce] +
-          ' alt="" class=' + dice_class + ' display:block align=center "/>';
+          ' alt="" class=' + dice_class + ' display:block align=center height=50%"/>';
         }
       }
 }
